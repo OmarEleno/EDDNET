@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Pagina Inicio</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Mi Base de datos</h1>
+        <h2>Omar Eleno Perez Cervantes</h2>
+        <br><!-- comment -->
+        <div th:if="${individuos != null and !individuos.empty}">
+            <table border="1">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Edad</th>
+                    <th>Correo</th>
+                    <th>Telefono</th>
+                </tr>  
+                
+                <tr th:each="individuo : ${individuos}">
+                    <td th:text="${individuo.nombre}">Muestra nombre</td>
+                    <td th:text="${individuo.apellido}">Muestra apellido</td>
+                    <td th:text="${individuo.edad}">Muestra edad</td>
+                    <td th:text="${individuo.correo}">Muestra correo</td>
+                    <td th:text="${individuo.telefono}">Muestra telefono</td> 
+                </tr>  
+            </table>
+        </div>
+        <div th:if="${individuos == null or individuos.empty}">
+            La lista no tiene información
+        </div>
+
+        <!--
+        Nombre: <span th:text="${individuo.nombre}">Muestra Nombre</span>
+        <br>
+        Apellido: <span th:text="${individuo.apellido}">Muestra Apellido</span>
+        <br>
+        Telefono: <span th:text="${individuo.telefono}">Muestra Telefono</span>
+        <br>
+        Correo: <span th:text="${individuo.correo}">Muestra Correo</span>
+        <br>
+        Edad: <span th:text="${individuo.edad}">Muestra Edad</span>
+        !-->
+    </body>
+</html>
