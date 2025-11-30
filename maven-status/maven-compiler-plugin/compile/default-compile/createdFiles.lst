@@ -1,0 +1,4 @@
+com\example\dao\IndividuoDao.class
+com\example\HolaSpringApplication.class
+com\example\domain\Individuo.class
+com\example\web\ControladorInicio.class
